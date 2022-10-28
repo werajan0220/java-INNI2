@@ -1,11 +1,11 @@
 import java.awt.*;
 
 public class Animal {
-    String species;
+   final String species;
     String name;
     Double weight;
     Boolean isAlive;
-    Animal(){
+    Animal(String species){
        this.isAlive = true;
        this.species = species ;
 
@@ -29,5 +29,8 @@ public class Animal {
                 this.isAlive = false;
                 this.weight = 0.0;
             }
+    }
+    public String toString(){
+        return weight+ " "+species;
     }
 }

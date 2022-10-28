@@ -1,10 +1,10 @@
-import java.awt.*;
+import devices.Car;
 
 public class Main {
     public static void main(String[] args) {
-        Animal cat = new Animal();
+        Animal cat = new Animal("kotecek");
         Integer x = 4;
-        cat.species = "kotecek";
+
         cat.name = "Kitku";
         cat.weight = 0.1;
 
@@ -28,9 +28,17 @@ public class Main {
         me.pet = cat;
         System.out.println(me.pet.species);
 
-        Car fiat = new Car("Fiat");
-        me.car = fiat;
-        System.out.println(me.car.producer);
+        Car fiat = new Car("Fiat", "BMW");
+        Car audi = new Car("Fiat", "AlfaRomeo");
+
+        me.setSalary(9000.0);
+        me.setCar( fiat, me.getSalary());
         //ctr+alt+l
+        System.out.println(fiat.equals(audi));
+        System.out.println(audi);
+        System.out.println(fiat);
+        System.out.println(cat);
+        System.out.println(me);
+//
     }
 }
