@@ -1,12 +1,15 @@
 import devices.Car;
 import devices.Phone;
 
-public class Human {
+public class Human  extends  Animal{
     String firstName;
     String lastName;
     Animal pet;
     Integer yearOfBirth;
-
+public Human(){
+    super("homo sapiens");
+    this.salary = 0.0;
+}
     private Car car;
     Phone iphone;
     private Double salary;

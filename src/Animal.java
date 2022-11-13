@@ -1,10 +1,11 @@
 import java.awt.*;
 
-public class Animal {
+public class Animal implements Ownable {
    final String species;
     String name;
     Double weight;
     Boolean isAlive;
+    Human owner;
     Animal(String species){
        this.isAlive = true;
        this.species = species ;
@@ -23,7 +24,7 @@ public class Animal {
                 System.out.println("HALO POLICJA");
             } else{
                 this.weight -=0.5;
-                System.out.println("Dzoęki za spacer");
+                System.out.println("Dzięki za spacer");
             }
             if (this.weight <= 0) {
                 this.isAlive = false;
@@ -32,5 +33,15 @@ public class Animal {
     }
     public String toString(){
         return weight+ " "+species;
+    }
+
+    @Override
+    public Human getOwner() {
+        return this.owner;
+    }
+
+    @Override
+    public Boolean isOwned() {
+        return this.owner != null;
     }
 }
