@@ -2,7 +2,10 @@ import devices.Car;
 
 public class Main {
     public static void main(String[] args) {
-        Animal cat = new Animal("kotecek");
+        String name;
+        Double weight;
+        Boolean isAlive;
+        Animal cat = new Animal("kotecek",name, weight, isAlive);
         Integer x = 4;
 
         cat.name = "Kitku";

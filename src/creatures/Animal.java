@@ -1,4 +1,4 @@
-import java.awt.*;
+package creatures;
 
 public class Animal implements Ownable {
    final String species;
@@ -6,7 +6,7 @@ public class Animal implements Ownable {
     Double weight;
     Boolean isAlive;
     Human owner;
-    Animal(String species){
+    Animal(String species, String name, Double weight, Boolean isAlive){
        this.isAlive = true;
        this.species = species ;
 
@@ -44,4 +44,5 @@ public class Animal implements Ownable {
     public Boolean isOwned() {
         return this.owner != null;
     }
+    abstract void turnOn();
 }

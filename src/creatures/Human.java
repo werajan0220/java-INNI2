@@ -1,13 +1,15 @@
+package creatures;
+
 import devices.Car;
 import devices.Phone;
 
-public class Human  extends  Animal{
+public class Human  extends Animal {
     String firstName;
     String lastName;
     Animal pet;
     Integer yearOfBirth;
 public Human(){
-    super("homo sapiens");
+    super("homo sapiens", name, weight, isAlive);
     this.salary = 0.0;
 }
     private Car car;
