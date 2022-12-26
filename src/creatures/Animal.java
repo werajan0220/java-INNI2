@@ -1,7 +1,8 @@
 package creatures;
 
 public class Animal implements Ownable {
-   final String species;
+    private static final String DEFUALT_FOOD_TYPE = ;
+    final String species;
     String name;
     Double weight;
     Boolean isAlive;
@@ -11,25 +12,41 @@ public class Animal implements Ownable {
        this.species = species ;
 
     }
-     void feed()
-     {
-        if (isAlive)
-        this.weight -= 0.5;
-        System.out.println("Dziękuję za jedzonko ");
-
+     void feed(){
+        this.feed(DEFAULT_FOOD_WEIGHT);
+    }
+     void feed(Double foodWeight){
+        this.feed(foodWeight, DEFUALT_FOOD_TYPE);
+     }
+     void feed(Double foodWeight, String foodType){
+        if(isAlive){
+            switch (foodType){
+                case "meet" -> this.weight += foodWeight;
+                        case "crops" -> this.weight += (0.5 * foodWeight);
+            }
+            System.out.println("dziękuję za jedzenie");
+        }else{
+            System.out.println("Szkoda że mnie nienakarmiłeś");
+        }
+     }
+    void takeForWalk(){
+        this.feed(DEFAULT_);
+    }
+    void takeForWalk(Double foodWeight){
+        this.feed(foodWeight, DEFUALT_FOOD_TYPE);
+    }
+    void takeForWalk(Double , boolean czyBiegniemy){
+        if(isAlive){
+            switch (foodType){
+                case "meet" -> this.weight += foodWeight;
+                case "crops" -> this.weight += (0.5 * foodWeight);
+            }
+            System.out.println("Dzięki za spacer");
+        }else{
+            System.out.println("HALO POLICJA");
+        }
     }
 
-      void takeForWalk() {
-            if(isAlive) {
-                System.out.println("HALO POLICJA");
-            } else{
-                this.weight -=0.5;
-                System.out.println("Dzięki za spacer");
-            }
-            if (this.weight <= 0) {
-                this.isAlive = false;
-                this.weight = 0.0;
-            }
     }
     public String toString(){
         return weight+ " "+species;

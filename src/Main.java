@@ -31,8 +31,8 @@ public class Main {
         me.pet = cat;
         System.out.println(me.pet.species);
 
-        Car fiat = new Car("Fiat", "BMW");
-        Car audi = new Car("Fiat", "AlfaRomeo");
+        Car fiat = new Car("Fiat", "BMW", year, price);
+        Car audi = new Car("Fiat", "AlfaRomeo", year, price);
 
         me.setSalary(9000.0);
         me.setCar( fiat, me.getSalary());

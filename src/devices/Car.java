@@ -1,14 +1,24 @@
 package devices;
 
-public class Car extends Device {
-       final String producer;
-        final String mark;
-        Double millage;
-        Integer yearOfProduction;
-        Double power;
-        public Double ofkoz=4000.0;
+public abstract class Car {
 
-    public Car(String producer, String mark ) {
+    private final String producer;
+    // pola klasy Car
+    private String make;
+    private String model;
+    private int year;
+    private int price;
+
+    public Car(String make, String model, int year, int price) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.price = price;
+    }
+
+    // abstrakcyjna metoda tankująca samochód
+    public abstract void refuel();
+    public Car(String producer, String mark, int year, int price) {
         super(producer, mark);
         this.producer = producer;
         this.mark = mark;
@@ -22,4 +32,9 @@ public class Car extends Device {
         return mark+ " "+millage+ " "+power;
     }
 
+    public String getModel(Tesla) {
+    }
+
+    public String getMake() {
+    }
 }
