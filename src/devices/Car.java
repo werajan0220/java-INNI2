@@ -1,22 +1,26 @@
 package devices;
 import creatures.Human;
+import java.util.ArrayList;
 
+import javax.management.InvalidApplicationException;
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Objects;
 
-public class Car extends Device implements Salleable{
+public class Car extends Device implements Salleable {
     public Integer horsepower;
     public boolean isSold = false;
     public boolean isClean = false;
 
-    public String toString(){
+    public String toString() {
         return model + " " + producer + " " + horsepower + "hp $" + value;
     }
 
-    public Car(String model, String producer,Integer yearOfProduction, Integer horsepower)
-    {
+    public Car(String model, String producer, Integer yearOfProduction, Integer horsepower) {
         super(producer, model);
         this.horsepower = horsepower;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -34,9 +38,10 @@ public class Car extends Device implements Salleable{
     public void turnOn() {
         System.out.println("Car is turned on now");
     }
+
     @Override
     public void sell(Human seller, Human buyer, Double price) {
-        if (seller.getCar() != null){
+        if (seller.getCar() != null) {
             if (buyer.cash >= price) {
                 this.isSold = true;
                 seller.cash += price;
@@ -58,4 +63,17 @@ public class Car extends Device implements Salleable{
     public void setModel(String model) {
         this.model = model;
     }
+
+    class Phone {
+        private String owner;
+        private double balance;
+        private List apps;
+
+        public Phone(String owner, double balance) {
+            this.owner = owner;
+            this.balance = balance;
+            this.apps = new ArrayList<>();
+        }
+    }
 }
+

@@ -12,14 +12,14 @@ public abstract class Animal extends Salleable implements Feedable, Ownable {
     Human owner;
 
 
-    public Animal(String species)
+    public Animal(String species, String name, Double weight, Boolean isAlive)
     {
-        isAlive = true;
+        this.isAlive = true;
         this.species = species;
         if (species.equals("dog")){
-            weight = 2.5;
+            this.weight = 2.5;
         } else if (species.equals("cat")){
-            weight = 0.5;
+            this.weight = 0.5;
         }
     }
     void feed(Double foodWeight){

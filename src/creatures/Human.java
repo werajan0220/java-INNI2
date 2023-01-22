@@ -19,12 +19,12 @@ public abstract class Human  extends Animal {
     LocalDateTime ldt;
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
-    public Human(String firstName, String lastName, Integer yearOfBirth, Double cash) {
-        super("homo sapiens");
+    public Human(String firstName, String lastName, String yearOfBirth, String cash) {
+        super("homo sapiens", name, weight, isAlive);
         this.firstName = firstName;
         this.lastName = lastName;
-        this.yearOfBirth = yearOfBirth;
-        this.cash = cash;
+        this.yearOfBirth = Integer.valueOf(yearOfBirth);
+        this.cash = Double.valueOf(cash);
     }
 
     public void displayHuman() {
@@ -81,6 +81,7 @@ public abstract class Human  extends Animal {
     }
 
     public void setPurchasedCar() {
+        Object Car;
         return (Car);
     }
 
@@ -89,7 +90,9 @@ public abstract class Human  extends Animal {
 
     public Object getSalary() {
 
-    public void setCar(Car Object fiat;
-        fiat, Object salary) {
+        public void setCar (Car Object fiat);
+    }
+
+    public void setCar(Car fiat, Object salary) {
     }
 }

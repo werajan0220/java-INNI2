@@ -1,7 +1,7 @@
 package creatures;
 public class FarmAnimal extends Animal implements Ediable{
     public FarmAnimal(String species) {
-        super(species);
+        super(species, name, weight, isAlive);
     }
 
     @Override
