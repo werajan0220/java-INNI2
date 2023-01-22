@@ -16,7 +16,7 @@ public class Phone extends Device {
         this.producer = producer;
         this.mark = mark;
     }
-    void turnOn() {
+    public void turnOn() {
         System.out.println("wciskam guzik");
         System.out.println("działa");
     }
@@ -25,7 +25,7 @@ public class Phone extends Device {
     }
 
 }
-public class Phone {
+class phone{
 
     // pola klasy Phone
     private String model;
@@ -36,7 +36,7 @@ public class Phone {
     public static final String DEFAULT_PROTOCOL = "https";
     public static final String DEFAULT_VERSION = "1.0";
 
-    public Phone(String model, String manufacturer) {
+    public phone(String model, String manufacturer) {
         this.model = model;
         this.manufacturer = manufacturer;
     }

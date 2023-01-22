@@ -1,7 +1,6 @@
 package creatures;
 
 public interface Ownable {
-    public Human getOwner();
-    public Boolean isOwned();
-
+    Human getOwner();
+    Boolean isOwned();
 }

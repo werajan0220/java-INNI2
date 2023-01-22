@@ -1,40 +1,61 @@
 package devices;
+import creatures.Human;
 
-public abstract class Car {
+import java.util.Objects;
 
-    private final String producer;
-    // pola klasy Car
-    private String make;
-    private String model;
-    private int year;
-    private int price;
+public class Car extends Device implements Salleable{
+    public Integer horsepower;
+    public boolean isSold = false;
+    public boolean isClean = false;
 
-    public Car(String make, String model, int year, int price) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.price = price;
+    public String toString(){
+        return model + " " + producer + " " + horsepower + "hp $" + value;
     }
 
-    // abstrakcyjna metoda tankująca samochód
-    public abstract void refuel();
-    public Car(String producer, String mark, int year, int price) {
-        super(producer, mark);
-        this.producer = producer;
-        this.mark = mark;
+    public Car(String model, String producer,Integer yearOfProduction, Integer horsepower)
+    {
+        super(producer, model);
+        this.horsepower = horsepower;
     }
     @Override
-    void turnOn(){
-        System.out.println("przekręcam kluczyk");
-        System.out.println("Samochód ruszył");
-    }
-    public String toString(){
-        return mark+ " "+millage+ " "+power;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return model.equals(car.model) && producer.equals(car.producer) && horsepower.equals(car.horsepower) && value.equals(car.value);
     }
 
-    public String getModel(Tesla) {
+    @Override
+    public int hashCode() {
+        return Objects.hash(model, producer, horsepower, value);
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("Car is turned on now");
+    }
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if (seller.getCar() != null){
+            if (buyer.cash >= price) {
+                this.isSold = true;
+                seller.cash += price;
+                buyer.cash -= price;
+                buyer.setPurchasedCar(seller.getCar());
+                seller.clearCar();
+                System.out.println("SUCCESSFUL SALE");
+            } else System.out.println("Buyer is poor, can't afford it!!! ");
+        } else System.out.println("He's a scammer, there's nothing for sale!!! ");
     }
 
     public String getMake() {
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 }
